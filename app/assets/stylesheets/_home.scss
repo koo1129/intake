@@ -23,7 +23,7 @@
         }
     }
 }
-.customers{
+.clients{
     width: 100%;
     height: calc( 100vh - 100px );
     background-image: url("/images/intake.home.png");
@@ -31,7 +31,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow: scroll;
-    .customer{
+    .client{
         width: 210px;
         height: 210px;
         color: white;
@@ -42,7 +42,7 @@
         a{
             color: white;
         }
-        .costomer_loge{
+        .client_phone{
             width: 210px;
             height: 140px;
             background-image: url("/images/intake.home.png");
