@@ -4,7 +4,7 @@
             = current_user.name
         %ul.header_box_link
             %li.link 
-                = link_to "#" do
+                = link_to new_client_path do
                     = icon('fas', 'user')
             %li.link 
                 = link_to edit_user_path(current_user) do
