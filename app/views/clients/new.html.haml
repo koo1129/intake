@@ -10,8 +10,7 @@
     = f.text_field :history, class: "client-form__input", placeholder: "生育歴を入力してください"
     = f.text_field :other, class: "client-form__input", placeholder: "その他"
     = f.text_field :intake, class: "client-form__input", placeholder: "初回面談日を入力してください"
-    = f.text_field :photo, class: "client-form__input", placeholder: "生育歴を入力してください"
-    = f.text_field :email, class: "client-form__input", placeholder: "生育歴を入力してください"
-    = f.text_field :phone, class: "client-form__input", placeholder: "生育歴を入力してください"
-    = f.collection_check_boxes :user_id, User.all, :id, :name
+    = f.text_field :photo, class: "client-form__input", placeholder: "写真を入力してください"
+    = f.text_field :email, class: "client-form__input", placeholder: "メールアドレスを入力してください"
+    = f.text_field :phone, class: "client-form__input", placeholder: "電話番号を入力してください"
     = f.submit "登録する", class: "client-form__action-btn" 
