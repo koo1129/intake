@@ -10,40 +10,13 @@
                 = link_to edit_user_path(current_user) do
                     = icon('fas', 'edit')
 .clients
-    .client
-        = link_to "#" do
-            .client_phone 
-            .costomer_company ピアニスト
-            .client_name 吉田
-    .client
-        = link_to "#" do
-            .client_phone 
-            .client_job 内閣総理大臣
-            .client_name 加藤
-    .client
-        = link_to "#" do
-            .client_phone  
-            .client_job 大学教授
-            .client_name 林
-    .client
-        = link_to "#" do
-            .client_phone 
-            .client_job ピアニスト
-            .client_name 山本
-    .client
-        = link_to "#" do
-            .client_phone 
-            .client_job 航海士
-            .client_name 中野
-    .client
-        = link_to "#" do
-            .client_phone  
-            .client_job 革命家
-            .client_name 浅田
-    .client
-        = link_to "#" do
-            .client_phone 
-            .client_job 歴史オタク
-            .client_name 荒山
-
-        
+    - current_user.clients.each do |client| 
+        .client
+            = link_to "#", class: 'client' do
+                .client_phone 
+                .costomer_company
+                    = client.job
+                .client_name 
+                    = client.name
+   
+ 
