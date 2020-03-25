@@ -14,8 +14,8 @@ class CreateClients < ActiveRecord::Migration[5.0]
       t.text :other
       t.date :intake
       t.text :photo
-      t.text :email
-      t.integer :phone
+      t.string :email
+      t.integer :phone,
       t.references :user, foreign_key: true
       t.timestamps
     end

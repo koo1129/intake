@@ -8,15 +8,28 @@ class ClientsController < ApplicationController
     def create
         @client = Client.new(client_params)
         if @client.save
-          redirect_to root_path, notice: 'グループを作成しました'
+          redirect_to root_path, notice: '登録が完了しました'
         else
           render :new
         end
     end
 
+    def edit
+      @group = Client.find(params[:id])
+    end
+  
+    def update
+      @client = Client.find(params[:id])
+      if @client.update(client_params)
+        redirect_to root_path, notice: 'グループを更新しました'
+      else
+        render :edit
+      end
+    end
+
     private
     def client_params
-        params.require(:client).permit(:name, :sex, :job, :address, :from, :family, :character, :complaint, :history, :other, :intake, :phot, :email, :phone, user_ids: [])
+        params.require(:client).permit(:name, :sex, :job, :address, :from, :family, :character, :complaint, :history, :other, :intake, :photo, :email, :phone).merge(user_id: current_user.id)
     end
   
 end
