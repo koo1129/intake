@@ -15,13 +15,13 @@ class ClientsController < ApplicationController
     end
 
     def edit
-      @group = Client.find(params[:id])
+      @client = Client.find(params[:id])
     end
   
     def update
       @client = Client.find(params[:id])
       if @client.update(client_params)
-        redirect_to root_path, notice: 'グループを更新しました'
+        redirect_to root_path, notice: '編集が完了しました'
       else
         render :edit
       end

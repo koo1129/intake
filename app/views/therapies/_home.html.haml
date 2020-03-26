@@ -12,7 +12,7 @@
 .clients
     - current_user.clients.each do |client| 
         .client
-            = link_to "#", class: 'client' do
+            = link_to edit_client_path(current_user.id), class: 'client' do
                 .client_phone 
                 .costomer_company
                     = client.job
