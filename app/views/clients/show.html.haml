@@ -1,3 +1,11 @@
-.header 
+.header
     .header_box
-        .
+        %P.header_box_name 
+            = @client.name
+        %ul.header_box_link
+            %li.link 
+                = link_to "#" do
+                    = icon('fas', 'user')
+            %li.link 
+                = link_to edit_client_path(@client) do
+                    = icon('fas', 'edit')
