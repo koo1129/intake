@@ -5,7 +5,67 @@
         %ul.header_box_link
             %li.link 
                 = link_to "#" do
-                    = icon('fas', 'user')
+                    = icon('fas', 'reply')
+            %li.link 
+                = link_to "#" do
+                    = icon('fas', 'clipboard')
             %li.link 
                 = link_to edit_client_path(@client) do
                     = icon('fas', 'edit')
+            %li.link 
+                = link_to "#" do
+                    = icon('fas', 'trash')
+.body
+    %ul.information
+        %li.name 
+            = @client.name
+        %li.sex
+            = @client.sex
+        %li.job
+            = @client.job
+        %li.address
+            = @client.address
+        %li.from
+            = @client.from
+        %li.family
+            = @client.family
+        %li.character
+            = @client.character
+        %li.complaint
+            = @client.complaint
+        %li.history
+            = @client.history
+        %li.other
+            = @client.other
+        %li.intake
+            = @client.intake
+        %li.photo
+            = @client.photo
+        %li.email
+            = @client.email
+        %li.phone
+            = @client.phone
+    .therapies
+        %ul.therapies_icon
+            %li.link 
+                = link_to "#" do
+                    = icon('fas', 'edit')
+            %li.link 
+                = link_to "#" do
+                    = icon('fas', 'trash')
+        .therapy
+            .date
+            .content
+    .result
+        .result_box
+            .end
+            .rifer
+            .dropout
+
+
+
+
+
+
+
+
