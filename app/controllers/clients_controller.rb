@@ -21,7 +21,7 @@ class ClientsController < ApplicationController
     def update
       @client = Client.find(params[:id])
       if @client.update(client_params)
-        redirect_to root_path, notice: '編集が完了しました'
+        redirect_to client_path(@client), notice: '編集が完了しました'
       else
         render :edit
       end
