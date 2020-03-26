@@ -9,6 +9,7 @@
 ### Association
 - has_many :clients
 - has_many :therapies
+- has_many :results
 
 ## clientテーブル
 |Column|Type|Options|
@@ -31,12 +32,25 @@
 ### Association
 - belongs_to :user
 - has_many :therapies
+- belongs_to :result
 
 ## therapiesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |therapy|text|null: false|
 |date|date|null: false|
+|user_id|references|null: false, foreign_key: true|
+|client_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :client
+
+## resultsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|end||
+|text|rifer||
+|text|dorpout||
 |user_id|references|null: false, foreign_key: true|
 |client_id|references|null: false, foreign_key: true|
 ### Association
