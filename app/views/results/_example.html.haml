@@ -1,0 +1,6 @@
+= form_tag 'example', method: :post do
+    - %w(終結 リファー ドロップアウト).each do |item|
+        %label
+        = check_box_tag 'results_form[results][]', item
+        =  item
+    = submit_tag('送信')
