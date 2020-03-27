@@ -13,7 +13,7 @@
                 = link_to edit_client_path(@client) do
                     = icon('fas', 'edit')
             %li.link 
-                = link_to client_path(@client.id), method: :delete do
+                = link_to client_path(@client), method: :delete do
                     = icon('fas', 'trash')
 .body
     .information
