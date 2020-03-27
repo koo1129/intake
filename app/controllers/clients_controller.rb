@@ -31,6 +31,15 @@ class ClientsController < ApplicationController
       @client = Client.find(params[:id])
     end
 
+    def destoroy
+      @client = Client.find(params[:id])
+      if @client.destoroy(client_params)
+        redirect_to root_path, notice: '削除しました'
+      else
+        redirect_to root_path, notice: '削除できませんでした'
+      end
+    end
+
     private
     def client_params
         params.require(:client).permit(:name, :sex, :job, :address, :from, :family, :character, :complaint, :history, :other, :intake, :photo, :email, :phone).merge(user_id: current_user.id)
