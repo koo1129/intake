@@ -105,3 +105,18 @@ h1 {
       }
     }
 }
+
+.body{
+  background-color: cadetblue;
+  width: 100%;
+  height: 100vh;
+  .information{
+    border: 10px solid #3586cb;
+  }
+  .therapies{
+    border: 10px solid #3586cb;
+  }
+  .result{
+    border: 10px solid #3586cb;
+  }
+}
