@@ -4,6 +4,7 @@ class TherapiesController < ApplicationController
   end
 
   def new
+    @therapy = Therapy.new
   end
-  
+
 end
