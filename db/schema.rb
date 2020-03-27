@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200324085612) do
+ActiveRecord::Schema.define(version: 20200327052859) do
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                     null: false
@@ -34,6 +34,27 @@ ActiveRecord::Schema.define(version: 20200324085612) do
     t.index ["user_id"], name: "index_clients_on_user_id", using: :btree
   end
 
+  create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text    "end",       limit: 65535
+    t.text    "rifer",     limit: 65535
+    t.text    "dorpout",   limit: 65535
+    t.integer "user_id"
+    t.integer "client_id"
+    t.index ["client_id"], name: "index_results_on_client_id", using: :btree
+    t.index ["user_id"], name: "index_results_on_user_id", using: :btree
+  end
+
+  create_table "therapies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "therapy",    limit: 65535, null: false
+    t.date     "date",                     null: false
+    t.integer  "client_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["client_id"], name: "index_therapies_on_client_id", using: :btree
+    t.index ["user_id"], name: "index_therapies_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
@@ -49,4 +70,8 @@ ActiveRecord::Schema.define(version: 20200324085612) do
   end
 
   add_foreign_key "clients", "users"
+  add_foreign_key "results", "clients"
+  add_foreign_key "results", "users"
+  add_foreign_key "therapies", "clients"
+  add_foreign_key "therapies", "users"
 end
