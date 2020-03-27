@@ -114,7 +114,23 @@ h1 {
     border: 10px solid #3586cb;
   }
   .therapies{
-    border: 10px solid #3586cb;
+    .therapy{
+      border: 10px solid #3586cb;
+      .therapy_box{
+        display: flex;
+        justify-content: space-between;
+        .therapies_icon{
+          display: flex;
+          .link{
+            width: 30px;
+            margin: 0.5rem;
+          }
+          a{
+            color: white;
+          }
+        }
+      }
+    }
   }
   .result{
     border: 10px solid #3586cb;
