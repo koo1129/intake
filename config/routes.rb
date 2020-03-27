@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root "therapies#index"
   resources :users, only: [:edit, :update]
   resources :clients, only: [:new, :create, :edit, :update, :show, :destroy] do
-    resources :therapies, only: [:index, :new]
+    resources :therapies, only: [:index, :new, :create]
   end
 end
