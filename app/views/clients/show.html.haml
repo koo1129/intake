@@ -13,7 +13,7 @@
                 = link_to edit_client_path(@client) do
                     = icon('fas', 'edit')
             %li.link 
-                = link_to "#" do
+                = link_to client_path(@client), method: :delete do
                     = icon('fas', 'trash')
 .body
     %ul.information
@@ -68,13 +68,15 @@
         %li.phone
             = @client.phone
     .therapies
-        %ul.therapies_icon
-            %li.link 
-                = link_to "#" do
-                    = icon('fas', 'edit')
-            %li.link 
-                = link_to "#" do
-                    = icon('fas', 'trash')
+        .therapy
+            %P.tittle カウンセシング内容
+            %ul.therapies_icon
+                %li.link 
+                    = link_to "#" do
+                        = icon('fas', 'edit')
+                %li.link 
+                    = link_to "#" do
+                        = icon('fas', 'trash')
         .therapy
             .date 2020年3月26日
             .content 認知行動療法、ソーシャルスキルトレーニング（SST）、エクスポージャー、系統的脱感作、箱庭療法
