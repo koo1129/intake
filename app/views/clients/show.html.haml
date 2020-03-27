@@ -20,15 +20,23 @@
         .name
             %p 名前
             %li
-            = @client.name
-        %li.sex
-            = @client.sex
-        %li.job
-            = @client.job
-        %li.address
-            = @client.address
-        %li.from
-            = @client.from
+                = @client.name
+        .sex
+            %p 性別
+            %li
+                = @client.sex
+        .job
+            %p 職業
+            %li
+                = @client.job
+        .address
+            %p 住所
+            %li
+                = @client.address
+        .from
+            %p 出生地
+            %li
+                = @client.from
         %li.family
             = @client.family
         %li.character
