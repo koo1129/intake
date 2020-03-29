@@ -33,7 +33,7 @@ class ClientsController < ApplicationController
 
     def destroy
       @client = Client.find(params[:id])
-      if @client.destroy(client_params)
+      if @client.destroy
         redirect_to root_path, notice: 'データを削除しました'
       else
         redirect_to root_path, notice: 'データを削除できませんでした'
