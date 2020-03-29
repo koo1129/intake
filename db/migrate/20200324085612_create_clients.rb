@@ -3,7 +3,7 @@ class CreateClients < ActiveRecord::Migration[5.0]
     create_table :clients do |t|
       t.string :name, null: false
       t.index :name, unique: true
-      t.text :sex
+      t.string :sex
       t.text :job
       t.string :address
       t.text :from
@@ -15,7 +15,7 @@ class CreateClients < ActiveRecord::Migration[5.0]
       t.date :intake
       t.text :photo
       t.string :email
-      t.integer :phone,
+      t.string :phone,
       t.references :user, foreign_key: true
       t.timestamps
     end
