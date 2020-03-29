@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200327052859) do
+ActiveRecord::Schema.define(version: 20200329170522) do
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                     null: false
@@ -26,12 +26,23 @@ ActiveRecord::Schema.define(version: 20200327052859) do
     t.date     "intake"
     t.text     "photo",      limit: 65535
     t.text     "email",      limit: 65535
-    t.integer  "phone"
+    t.string   "phone"
     t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_clients_on_name", unique: true, using: :btree
     t.index ["user_id"], name: "index_clients_on_user_id", using: :btree
+  end
+
+  create_table "contents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "therapy",    limit: 65535, null: false
+    t.date     "date",                     null: false
+    t.integer  "client_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["client_id"], name: "index_contents_on_client_id", using: :btree
+    t.index ["user_id"], name: "index_contents_on_user_id", using: :btree
   end
 
   create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -70,6 +81,8 @@ ActiveRecord::Schema.define(version: 20200327052859) do
   end
 
   add_foreign_key "clients", "users"
+  add_foreign_key "contents", "clients"
+  add_foreign_key "contents", "users"
   add_foreign_key "results", "clients"
   add_foreign_key "results", "users"
   add_foreign_key "therapies", "clients"
